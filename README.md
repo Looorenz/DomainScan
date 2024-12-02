@@ -1,6 +1,8 @@
 # Domain-Subdomain Port Scanner
 
-This Python script scans the subdomains of a specified domain, gathering information about open ports and active services on each subdomain.
+This script was developed to meet the need of obtaining a list of active subdomains for a given domain and quickly identifying open ports on them. 
+This helps in performing daily checks to ensure that everything is functioning correctly.
+
 
 ### Main Features
 - **Subdomain Detection**: Uses the [DNSDumpster](https://dnsdumpster.com/) API to get a list of subdomains associated with a domain.

@@ -80,7 +80,7 @@ def main():
     args = parser.parse_args()
 
     domain = args.domain
-    api_key = "APIKEY dnsdumpster"
+    api_key = "YOUR_API_KEY"
 
     subdomains = get_subdomains(domain, api_key)
 

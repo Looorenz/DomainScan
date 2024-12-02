@@ -65,6 +65,8 @@ sub2.example.com
 ### Example of a `domain_no_ports.txt` file:
 
 ```python
+digimat.it - Sottodomini senza porte aperte
+==================================================
 sub3.example.com
 ==================================================
 ```

@@ -1,50 +1,52 @@
 # Domain-Subdomain Port Scanner
 
-Questo script Python effettua la scansione dei sottodomini di un dominio specificato, raccogliendo informazioni sulle porte aperte e sui servizi attivi su ciascun sottodominio.
+This Python script scans the subdomains of a specified domain, gathering information about open ports and active services on each subdomain.
 
-### Funzionalità principali
-- **Rilevamento dei sottodomini**: Utilizza l'API di [DNSDumpster](https://dnsdumpster.com/) per ottenere una lista di sottodomini associati a un dominio.
-- **Scansione delle porte**: Esegui una scansione delle porte aperte su ciascun sottodominio utilizzando [Nmap](https://nmap.org/).
-- **Identificazione dei servizi**: Identifica i servizi attivi su ciascuna porta aperta utilizzando Nmap.
-- **Salvataggio dei risultati**: Salva i risultati della scansione in due file di testo separati: uno per i sottodomini con porte aperte e uno per quelli senza.
+### Main Features
+- **Subdomain Detection**: Uses the [DNSDumpster](https://dnsdumpster.com/) API to get a list of subdomains associated with a domain.
+- **Port Scanning**: Performs a scan of open ports on each subdomain using [Nmap](https://nmap.org/).
+- **Service Identification**: Identifies active services on each open port using Nmap.
+- **Saving Results**: Saves the scan results into two separate text files: one for subdomains with open ports and one for those without.
 
 ---
 
-## Requisiti
+## Requirements
 
-- **Python 3.x**: Lo script è scritto in Python 3. Assicurati di avere Python 3 installato sul tuo sistema.
-- **Nmap**: Lo script utilizza il tool Nmap per eseguire la scansione delle porte. Nmap deve essere installato localmente.
+- **Python 3.x**: The script is written in Python 3. Make sure you have Python 3 installed on your system.
+- **Nmap**: The script uses the Nmap tool to perform the port scan. Nmap must be installed locally.
 
-### Installazione di Nmap
+### Installing Nmap
 
-- Su **Ubuntu** o altre distribuzioni Linux basate su Debian:
+- On **Ubuntu** or other Debian-based Linux distributions:
   ```bash
   sudo apt-get install nmap
   ```
-- Su **Windows** o altre distribuzioni Linux basate su Debian:
+- On **Windows** :
   ```bash
   pip install python-nmap
   ```
-## Come utilizzare lo script
+  
+## How to Use the Script
 
-### 1. Configurare la chiave API di DNSDumpster
-Lo script utilizza l'API di DNSDumpster per ottenere una lista di sottodomini per un dominio. Devi registrarti su [DNSDumpster](https://dnsdumpster.com/) per ottenere una chiave API.
+### 1. Configure the DNSDumpster API Key
+The script uses the DNSDumpster API to get a list of subdomains for a domain. You must sign up at [DNSDumpster](https://dnsdumpster.com/) to obtain an API key.
 
-Una volta ottenuta la chiave, sostituisci il valore di `api_key` nel codice con la tua chiave API:
+Once you have the key, replace the value of `api_key` in the code with your API key
 
 ```python
 api_key = "YOUR_API_KEY"
 ```
-### 2. Esegui lo script
-Per eseguire lo script, apri il terminale e utilizza il seguente comando, sostituendo <dominio> con il dominio che desideri scansionare (ad esempio, example.com):
+### 2. Run the Script
+To run the script, open the terminal and use the following command, replacing <domain> with the domain you want to scan (for example, example.com):
 
 ```python
-python3 domain_scanner.py <dominio>
+python3 domain_scanner.py <domain>
 ```
 
-### 3. Risultati attesi
-Dopo che la scansione è stata completata, lo script genererà due file di output:
-### Esempio di un file `domain_scan_results.txt`:
+### 3. Expected Results
+After the scan is completed, the script will generate two output files:
+
+### Example of a `domain_scan_results.txt` file:
 
 ```python
 example.com - Sottodomini con porte aperte
@@ -58,7 +60,7 @@ sub2.example.com
 >80 - http     Apache httpd
 ==================================================
 ```
-### Esempio di un file `domain_no_ports.txt`:
+### Example of a `domain_no_ports.txt` file:
 
 ```python
 sub3.example.com
